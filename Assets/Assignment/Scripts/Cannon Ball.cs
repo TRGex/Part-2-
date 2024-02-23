@@ -25,16 +25,15 @@ public class CannonBall : MonoBehaviour
     {
         transform.Translate(0, 15 * Time.deltaTime, 0);
 
-        if (transform.position.y > 5)
+        if (transform.position.y > 5 )
         {
             Destroy(gameObject);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 
 
-    //private void FixedUpdate()
-    //{
-    //    Vector2 direction = new Vector2(speed * Time.deltaTime, 0);
-    //    rb.MovePosition(rb.position + direction);
-    //}
 }
