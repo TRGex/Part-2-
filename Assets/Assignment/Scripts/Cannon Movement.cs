@@ -11,6 +11,7 @@ public class CannonMovement : MonoBehaviour
     Vector2 movement;
     public float speed = 5f;
     public GameObject cannonBall;
+    public Transform ballSpawn;
 
     Rigidbody2D rb;
 
@@ -26,8 +27,9 @@ public class CannonMovement : MonoBehaviour
         cannonPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(cannonBall, transform.position, transform.rotation);
+            Instantiate(cannonBall, ballSpawn.position, ballSpawn.rotation);
         }
+
     }
 
     private void FixedUpdate()
